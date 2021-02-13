@@ -1,0 +1,23 @@
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-launcher-list-app" version="1.0.0">
+  <name>Launcher List</name>
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+  <description>This plugin lists all installed apps and also possible to launch a package.</description>
+  <author>João Medeiros - www.linkedin.com/in/joaomede</author>
+  <keywords></keywords>
+  <license>MIT</license>
+  <js-module src="www/launcherList.js" name="launcherList">
+    <clobbers target="window.launcherList" />
+  </js-module>
+
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="LauncherList">
+        <param name="android-package" value="com.joaomede.launcherList.LauncherList"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/LauncherList.java" target-dir="src/com/joaomede/launcherList" />
+  </platform>
+</plugin>
